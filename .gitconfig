@@ -1,0 +1,8 @@
+[user]
+	email = max.janvier@epitech.eu
+	name = Max Janvier
+[alias]
+	lg = log --graph --pretty=format:'%C(yellow)%d%Creset %C(cyan)%h%Creset %s %Cgreen(%cd) %C(bold blue)<%an>%Creset' --abbrev-commit --date=short --all --date=format:'%d/%m/%Y %H:%M:%S'
+	st = status
+[init]
+	defaultBranch = main
