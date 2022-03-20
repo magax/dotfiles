@@ -10,9 +10,9 @@ call plug#begin()
   Plug 'tpope/vim-fugitive'
   Plug 'jiangmiao/auto-pairs'
 
-  Plug 'dart-lang/dart-vim-plugin'
-  Plug 'pangloss/vim-javascript'
-  Plug 'darfink/vim-plist'
+  Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart'] }
+  Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
+  Plug 'mattn/emmet-vim', { 'for': ['html'] }
 call plug#end()
 
 syntax enable
@@ -29,13 +29,23 @@ set belloff=all
 set foldmethod=syntax
 set nofoldenable
 set splitright
+set splitbelow
+set backupdir=/tmp//
+set directory=/tmp//
+set undodir=/tmp//
 
 let mapleader = ","
 let g:dart_format_on_save = 1
 
-nmap <silent> <C-b> :NERDTreeToggle<CR>
-nmap <silent> <C-f> :NERDTreeFind<CR>
-nmap <silent> <C-p> :FZF<CR>
+nmap <silent> <leader>b :NERDTreeToggle<CR>
+nmap <silent> <leader>f :NERDTreeFind<CR>
+nmap <silent> <leader>p :FZF<CR>
+nmap <silent> <leader>P :Buf<CR>
+
+nmap <leader><Right> :vertical resize +5<CR>
+nmap <leader><Left> :vertical resize -5<CR>
+nmap <leader><Down> :resize +5<CR>
+nmap <leader><Up> :resize -5<CR>
 
 " Prettier
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
