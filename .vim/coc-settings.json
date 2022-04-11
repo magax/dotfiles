@@ -1,0 +1,7 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": [ "dart" ],
+  "suggest.noselect": false,
+
+  "flutter.lsp.initialization.closingLabels": true,
+  "flutter.openDevLogSplitCommand": "botright 10split"
+}

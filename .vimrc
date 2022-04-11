@@ -24,6 +24,7 @@ set number
 set tabstop=2 shiftwidth=2 expandtab smarttab 
 set backspace=indent,eol,start
 set cursorline
+set cursorcolumn
 set colorcolumn=80
 set belloff=all
 set foldmethod=syntax
@@ -47,10 +48,17 @@ nmap <leader><Left> :vertical resize -5<CR>
 nmap <leader><Down> :resize +5<CR>
 nmap <leader><Up> :resize -5<CR>
 
-" Prettier
+" FLUTTER
+nmap <silent> <leader>fS :CocCommand flutter.run<CR>
+nmap <silent> <leader>fr :CocCommand flutter.dev.hotReload<CR>
+nmap <silent> <leader>fR :CocCommand flutter.dev.hotRestart<CR>
+nmap <silent> <leader>fl :CocCommand flutter.dev.openDevLog<CR>
+nmap <silent> <leader>fq :CocCommand flutter.dev.quit<CR>
+
+" PRETTIER
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" Coc
+" COC
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
