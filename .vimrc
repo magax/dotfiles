@@ -1,5 +1,6 @@
 call plug#begin()
   Plug 'dracula/vim', { 'as': 'dracula' }
+  Plug 'NLKNguyen/papercolor-theme'
 
   Plug 'preservim/NERDTree'
   Plug 'preservim/nerdcommenter'
@@ -8,27 +9,25 @@ call plug#begin()
   Plug 'junegunn/fzf.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
-  Plug 'jiangmiao/auto-pairs'
 
   Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart'] }
   Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
   Plug 'mattn/emmet-vim', { 'for': ['html'] }
+  Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': ['go'] }
 call plug#end()
 
-syntax enable
-colorscheme dracula 
+syntax on
+colorscheme PaperColor
 
 set hidden
 set number
 "set relativenumber
+set colorcolumn=
 set tabstop=2 shiftwidth=2 expandtab smarttab 
 set backspace=indent,eol,start
 set cursorline
 set cursorcolumn
-set colorcolumn=80
 set belloff=all
-set foldmethod=syntax
-set nofoldenable
 set splitright
 set splitbelow
 set backupdir=/tmp//
@@ -36,7 +35,6 @@ set directory=/tmp//
 set undodir=/tmp//
 
 let mapleader = ","
-let g:dart_format_on_save = 1
 
 nmap <silent> <leader>b :NERDTreeToggle<CR>
 nmap <silent> <leader>f :NERDTreeFind<CR>
@@ -47,6 +45,20 @@ nmap <leader><Right> :vertical resize +5<CR>
 nmap <leader><Left> :vertical resize -5<CR>
 nmap <leader><Down> :resize +5<CR>
 nmap <leader><Up> :resize -5<CR>
+
+" GO
+let g:go_doc_keywordprg_enabled = 0
+let g:go_def_mapping_enabled = 0
+
+let g:go_highlight_extra_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_variable_declarations = 1
+let g:go_highlight_variable_assignments = 1
 
 " FLUTTER
 nmap <silent> <leader>fS :CocCommand flutter.run<CR>
@@ -70,6 +82,8 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 nmap <silent> <leader>A :set keymap=accents<CR>
 nmap <silent> <leader>a :set keymap=<CR>
 nmap <silent> <leader>d :CocList diagnostics<CR>
+
+command! -nargs=0 Fmt :call CocActionAsync('format')
 
 " Remap <C-j> and <C-k> for scroll float windows/popups.
 if has('nvim-0.4.0') || has('patch-8.2.0750')

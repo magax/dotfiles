@@ -1,5 +1,9 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": [ "dart" ],
+  "coc.preferences.formatOnSaveFiletypes": [
+    "dart", 
+    "go",
+    "javascript"
+  ],
   "suggest.noselect": false,
 
   "flutter.lsp.initialization.closingLabels": true,
