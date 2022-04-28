@@ -28,3 +28,8 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH="$PATH:$HOME/dev/flutter/bin"
 export PATH="$PATH":"$HOME/dev/flutter/.pub-cache/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
+
+export GOPATH=$HOME/go
+export GOROOT="$(brew --prefix go)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+export GOBIN=$GOPATH/bin

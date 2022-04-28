@@ -18,6 +18,7 @@ call plug#end()
 
 syntax on
 colorscheme PaperColor
+set background=dark
 
 set hidden
 set number
@@ -26,7 +27,7 @@ set colorcolumn=
 set tabstop=2 shiftwidth=2 expandtab smarttab 
 set backspace=indent,eol,start
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set belloff=all
 set splitright
 set splitbelow
@@ -83,6 +84,9 @@ nmap <silent> <leader>A :set keymap=accents<CR>
 nmap <silent> <leader>a :set keymap=<CR>
 nmap <silent> <leader>d :CocList diagnostics<CR>
 
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
+				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 command! -nargs=0 Fmt :call CocActionAsync('format')
 
 " Remap <C-j> and <C-k> for scroll float windows/popups.
@@ -113,4 +117,3 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
-
