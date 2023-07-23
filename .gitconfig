@@ -26,5 +26,6 @@
 	directory = /opt/homebrew/Caskroom/flutter/3.7.12/flutter
 [user]
 	name = magax
+	email = max.janvier@epitech.eu
 [init]
 	defaultBranch = main
