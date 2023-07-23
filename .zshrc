@@ -1,14 +1,18 @@
-export ZSH="/Users/maxj/.oh-my-zsh"
+source $HOME/.antigen.zsh
 
-ZSH_THEME="robbyrussell"
+# Load the oh-my-zsh's library.
+antigen use oh-my-zsh
 
-plugins=(
-  git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
-)
+# Bundles
+antigen bundle git
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-source $ZSH/oh-my-zsh.sh
+# Load the theme.
+antigen theme robbyrussell
+
+# Tell Antigen that you're done.
+antigen apply
 
 ### HOMEBREW
 eval $(/opt/homebrew/bin/brew shellenv)
