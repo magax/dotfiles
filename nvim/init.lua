@@ -33,4 +33,10 @@ set.undodir = vim.fn.expand "/tmp/nvim/undofiles"
 set.backup = false
 set.swapfile = false
 
+-- Keymaps
+vim.keymap.set('n', '<leader>h', ':set hls!<CR>', opts)
+
+-- remap capital W command to lowercase (save) w
+vim.cmd('command W w')
+
 require('plugins')
