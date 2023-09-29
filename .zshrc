@@ -19,7 +19,6 @@ eval $(/opt/homebrew/bin/brew shellenv)
 
 ### ALIASES
 #
-alias vim='nvim'
 alias gmc='gitmoji -c'
 #alias flutter-run-dev="flutter run --dart-define=DEV_HOST=$(ipconfig getifaddr en0) "
 alias frd="flutter run --web-renderer=canvaskit --dart-define=RUN_EMULATORS=true "
