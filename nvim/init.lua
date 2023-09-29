@@ -18,6 +18,10 @@ set.shiftwidth = 2
 set.softtabstop = 2
 set.expandtab = true
 
+-- Split
+set.splitbelow = true
+set.splitright = true
+
 ---- removes cursorline (keep only line number highlight)
 --vim.cmd([[ hi CursorLine gui=NONE ]])
 
