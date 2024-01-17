@@ -1,7 +1,19 @@
+" ===> PLUG
+
+" Auto install plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 call plug#begin()
+  " Theme
   Plug 'dracula/vim', { 'as': 'dracula' }
 
+  " Tools
   Plug 'preservim/NERDTree'
+  Plug 'PhilRunninger/nerdtree-visual-selection'
   Plug 'preservim/nerdcommenter'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -9,12 +21,17 @@ call plug#begin()
   Plug 'vim-airline/vim-airline'
   Plug 'tpope/vim-fugitive'
 
+  " Languagages
   Plug 'dart-lang/dart-vim-plugin', { 'for': ['dart'] }
   Plug 'pangloss/vim-javascript', { 'for': ['javascript'] }
   Plug 'maxmellon/vim-jsx-pretty', { 'for': ['javascript'] }
-  Plug 'mattn/emmet-vim'
   Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries', 'for': ['go'] }
+
 call plug#end()
+
+" <=== PLUG
+
+" ===> SETTINGS
 
 syntax on
 colorscheme dracula
@@ -22,8 +39,10 @@ let g:dracula_italic = 0
 set background=dark
 highlight Normal ctermbg=black
 
+set re=2
+set noesckeys
 set hidden
-set number
+set relativenumber
 set colorcolumn=
 set tabstop=2 shiftwidth=2 expandtab smarttab 
 set backspace=indent,eol,start
@@ -35,39 +54,34 @@ set backupdir=/tmp//
 set directory=/tmp//
 set undodir=/tmp//
 
+" <=== SETTINGS
+
+" ===> MAPPINGS
+
 let mapleader = ","
+
+
+nmap <silent> <leader>; :Buf<CR>
+nmap <silent> <leader>[ :bp<CR>
+nmap <silent> <leader>] :bn<CR>
 
 nmap <silent> <leader>b :NERDTreeToggle<CR>
 nmap <silent> <leader>f :NERDTreeFind<CR>
 nmap <silent> <leader>p :FZF<CR>
+nmap <silent> <space>h :set hls!<CR>
 
-" GO
-let g:go_doc_keywordprg_enabled = 0
-let g:go_def_mapping_enabled = 0
+command W write
 
-let g:go_highlight_extra_types = 1
-let g:go_highlight_operators = 1
-let g:go_highlight_functions = 1
-let g:go_highlight_function_parameters = 1
-let g:go_highlight_function_calls = 1
-let g:go_highlight_types = 1
-let g:go_highlight_fields = 1
-let g:go_highlight_variable_declarations = 1
-let g:go_highlight_variable_assignments = 1
+" <=== MAPPINGS
 
-" FLUTTER
-nmap <silent> <leader>fe :CocCommand flutter.emulators<CR>
-nmap <silent> <leader>fd :CocCommand flutter.devices<CR>
-nmap <silent> <leader>fS :CocCommand flutter.run<CR>
-nmap <silent> <leader>fr :CocCommand flutter.dev.hotReload<CR>
-nmap <silent> <leader>fR :CocCommand flutter.dev.hotRestart<CR>
-nmap <silent> <leader>fl :CocCommand flutter.dev.openDevLog<CR>
-nmap <silent> <leader>fq :CocCommand flutter.dev.quit<CR>
+" ===> PRETTIER
 
-" PRETTIER
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
-" COC
+" <=== PRETTIER
+
+" ===> COC
+
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
@@ -76,13 +90,15 @@ nmap <silent> gR <Plug>(coc-rename)
 nmap <silent> gs <Plug>(coc-codeaction-selected)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> <leader>A :set keymap=accents<CR>
-nmap <silent> <leader>a :set keymap=<CR>
+nmap <silent> gc  <Plug>(coc-codeaction-cursor)
+nmap <silent> <leader>r <Plug>(coc-codeaction-refactor)
 nmap <silent> <leader>d :CocList diagnostics<CR>
 
+" Confirm select on ENTER
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
 				\: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
+" COC format
 command! -nargs=0 Fmt :call CocActionAsync('format')
 
 " Remap <C-j> and <C-k> for scroll float windows/popups.
@@ -113,3 +129,5 @@ function! s:show_documentation()
     execute '!' . &keywordprg . " " . expand('<cword>')
   endif
 endfunction
+
+" <=== COC
