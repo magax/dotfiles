@@ -15,10 +15,12 @@ antigen theme robbyrussell
 antigen apply
 
 ### HOMEBREW
-eval $(/opt/homebrew/bin/brew shellenv)
+export PATH="$HOME/dotfiles/homebrew/bin:$PATH"
+HOMEBREW_NO_AUTO_UPDATE=1
 
 ### ALIASES
 #
+alias bbd='brew bundle dump -f --file ~/dotfiles/Brewfile'
 alias gmc='gitmoji -c'
 #alias flutter-run-dev="flutter run --dart-define=DEV_HOST=$(ipconfig getifaddr en0) "
 alias frd="flutter run --web-renderer=canvaskit --dart-define=RUN_EMULATORS=true "
@@ -26,8 +28,6 @@ alias emulators="firebase emulators:start --import ./firebase_emulator_data --ex
 alias android="flutter emulators --launch Pixel "
 alias ios="flutter emulators --launch iOS"
 
-### PATH
-#
 # ANDROID STUDIO
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
