@@ -15,7 +15,7 @@ antigen theme robbyrussell
 antigen apply
 
 ### HOMEBREW
-export PATH="$HOME/dotfiles/homebrew/bin:$PATH"
+export PATH="$HOME/homebrew/bin:$PATH"
 HOMEBREW_NO_AUTO_UPDATE=1
 
 ### ALIASES
