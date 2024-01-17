@@ -1,0 +1,5 @@
+{
+  "coc.preferences.formatOnSave": true,
+  "flutter.openDevLogSplitCommand": "botright 10split",
+  "diagnostic.checkCurrentLine": true
+}
