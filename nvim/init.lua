@@ -27,7 +27,7 @@ set.splitright = true
 
 -- Keep undo files on RAM
 set.undofile = true
-set.undodir = vim.fn.expand "/tmp/nvim/undofiles"
+set.undodir = vim.fn.expand "~/.undofiles"
 
 -- Remove backup and swap files
 set.backup = false
