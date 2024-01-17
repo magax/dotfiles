@@ -4,7 +4,7 @@
 	br = branch
 	cm = commit
   cma = commit --amend
-	co = checkout
+  co = checkout
 	df = diff
   dfs = diff --staged
   ft = fetch
