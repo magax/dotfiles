@@ -15,7 +15,7 @@ antigen theme robbyrussell
 antigen apply
 
 ### HOMEBREW
-export PATH="$HOME/homebrew/bin:$PATH"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 HOMEBREW_NO_AUTO_UPDATE=1
 
 ### ALIASES
