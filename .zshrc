@@ -8,9 +8,6 @@ antigen bundle git
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# Load the theme.
-antigen theme robbyrussell
-
 # Tell Antigen that you're done.
 antigen apply
 
@@ -20,6 +17,7 @@ HOMEBREW_NO_AUTO_UPDATE=1
 
 ### ALIASES
 #
+alias vim='nvim'
 alias bbd='brew bundle dump -f --file ~/dotfiles/Brewfile'
 alias gmc='gitmoji -c'
 #alias flutter-run-dev="flutter run --dart-define=DEV_HOST=$(ipconfig getifaddr en0) "

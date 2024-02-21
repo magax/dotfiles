@@ -37,6 +37,6 @@ set.swapfile = false
 vim.keymap.set('n', '<leader>h', ':set hls!<CR>', opts)
 
 -- remap capital W command to lowercase (save) w
-vim.cmd('command W w')
+vim.cmd('command! W w')
 
 require('plugins')
