@@ -52,9 +52,9 @@ return require('packer').startup(function(use)
   use {
     'ibhagwan/fzf-lua',
     config = function()
-      vim.keymap.set('n', '<leader>ff', ':FzfLua files<CR>', opts)
-      vim.keymap.set('n', '<leader>fg', ':FzfLua grep<CR>', opts)
-      vim.keymap.set('n', '<leader>fb', ':FzfLua buffers<CR>', opts)
+      vim.keymap.set('n', '<leader>p', ':FzfLua files<CR>', opts)
+      vim.keymap.set('n', '<leader>f', ':FzfLua grep<CR>', opts)
+      vim.keymap.set('n', '<leader>;', ':FzfLua buffers<CR>', opts)
     end
   }
 
