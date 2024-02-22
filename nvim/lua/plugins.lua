@@ -30,7 +30,7 @@ return require('packer').startup(function(use)
     end
   }
 
-  -- Tree-sitter (Highlighting)
+  -- Tree-sitter
   use {
     'nvim-treesitter/nvim-treesitter',
     config = function()
@@ -39,26 +39,15 @@ return require('packer').startup(function(use)
   }
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  -- FZF (Fuzzy finder)
-  use {
-    'junegunn/fzf.vim',
-    requires = { 'junegunn/fzf', run = ':call fzf#install()' },
-    config = function()
-      vim.keymap.set('n', '<leader>F', ':FZF<CR>', opts)
-    end
-  }
-
   -- FZF Lua
   use {
     'ibhagwan/fzf-lua',
     config = function()
-      vim.keymap.set('n', '<leader>p', ':FzfLua files<CR>', opts)
-      vim.keymap.set('n', '<leader>f', ':FzfLua grep<CR>', opts)
-      vim.keymap.set('n', '<leader>;', ':FzfLua buffers<CR>', opts)
+      require('config/fzf_rc)')
     end
   }
 
-    -- Completion
+  -- Completion
   use {
     'hrsh7th/nvim-cmp',
     config = function()
@@ -72,7 +61,7 @@ return require('packer').startup(function(use)
   use { 'L3MON4D3/LuaSnip' }
   use { 'saadparwaiz1/cmp_luasnip' } 
 
-  -- Airline
+  -- Vim Airline
   use 'vim-airline/vim-airline'
 
   -- Comments
@@ -84,7 +73,7 @@ return require('packer').startup(function(use)
     config = function() require('nvim-autopairs').setup {} end
   }
 
--- Automatically set up your configuration after cloning packer.nvim
+  -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then
     require('packer').sync()
