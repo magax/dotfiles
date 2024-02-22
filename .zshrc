@@ -18,8 +18,8 @@ HOMEBREW_NO_AUTO_UPDATE=1
 ### ALIASES
 #
 alias vim='nvim'
-alias bbd='brew bundle dump -f --file ~/dotfiles/Brewfile'
 alias gmc='gitmoji -c'
+alias bbd='brew bundle dump -f --global'
 #alias flutter-run-dev="flutter run --dart-define=DEV_HOST=$(ipconfig getifaddr en0) "
 alias frd="flutter run --web-renderer=canvaskit --dart-define=RUN_EMULATORS=true "
 alias emulators="firebase emulators:start --import ./firebase_emulator_data --export-on-exit ./firebase_emulator_data "
