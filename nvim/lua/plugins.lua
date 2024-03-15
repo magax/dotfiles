@@ -30,6 +30,9 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- Icons
+  use 'nvim-tree/nvim-web-devicons'
+
   -- Tree-sitter
   use {
     'nvim-treesitter/nvim-treesitter',
