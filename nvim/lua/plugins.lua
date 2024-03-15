@@ -46,7 +46,7 @@ return require('packer').startup(function(use)
   use {
     'ibhagwan/fzf-lua',
     config = function()
-      require('config/fzf_rc)')
+      require('config/fzf_rc')
     end
   }
 
