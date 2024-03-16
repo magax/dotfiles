@@ -35,7 +35,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>f', vim.lsp.buf.format, bufopts) 
 
   vim.diagnostic.config({
-    virtual_text = false,
+    virtual_text = true,
   })
 end
 
