@@ -15,11 +15,20 @@ return require('packer').startup(function(use)
 
   -- Configurations for Nvim LSP
   use {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end
+  }
+
+  use {
     'neovim/nvim-lspconfig',
     config = function()
       require('config/lsp_rc')
     end
   }
+
+  use "williamboman/mason-lspconfig.nvim"
 
   -- Color schemes
   use {
