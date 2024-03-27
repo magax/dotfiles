@@ -14,8 +14,9 @@ brew bundle --file ~/dotfiles/.Brewfile
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Create symlinks to Home
-ln -s ~/dotfiles/.Brewfile ~
-ln -s ~/dotfiles/.gitconfig ~
-ln -s ~/dotfiles/.tmux.conf ~
+ln -s -f ~/dotfiles/.Brewfile ~
+ln -s -f ~/dotfiles/.gitconfig ~
+ln -s -f ~/dotfiles/.tmux.conf ~
 ln -s -f ~/dotfiles/.zshrc ~
-ln -s ~/dotfiles/nvim ~
+ln -s -f ~/dotfiles/nvim ~
+ln -s -f ~/dotfiles/.config ~
