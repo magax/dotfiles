@@ -8,7 +8,7 @@ alias gmc='gitmoji -c'
 alias bbd='brew bundle dump -f --global'
 
 # Neovim
-export XDG_CONFIG_HOME = "$HOME/dotfiles"
+export XDG_CONFIG_HOME="$HOME/dotfiles"
 
 # ANDROID STUDIO
 export ANDROID_HOME=$HOME/Library/Android/sdk
