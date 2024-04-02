@@ -7,6 +7,9 @@ alias vim='nvim'
 alias gmc='gitmoji -c'
 alias bbd='brew bundle dump -f --global'
 
+# Neovim
+export XDG_CONFIG_HOME = "$HOME/dotfiles"
+
 # ANDROID STUDIO
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator
@@ -29,7 +32,6 @@ export LDFLAGS="-L/opt/homebrew/opt/node@18/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/node@18/include"
 
 #ZSH
-
 export PATH="/opt/homebrew/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
