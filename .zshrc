@@ -35,12 +35,14 @@ export CPPFLAGS="-I/opt/homebrew/opt/node@18/include"
 export PATH="/opt/homebrew/bin:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="robbyrussell"
-plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
 
 # plugins
 source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "/opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "/opt/homebrew/opt/zsh-git-prompt/zshrc.sh"
+
+ZSH_THEME="pretty"
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
