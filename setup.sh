@@ -1,22 +1,22 @@
 # Get dotfiles
-git clone https://github.com/magax/dotfiles.git ~/dotfiles
+git clone git@github.com:magax/dotfiles.git "$HOME"/dotfiles
 
-# Get TMUX plugin manager
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Get Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Install brew packages from Brewfile
-brew bundle --file ~/dotfiles/.Brewfile
+brew bundle --file "$HOME"/dotfiles/.Brewfile
 
-# Install Oh My Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# Get TMUX plugin manager
+git clone https://github.com/tmux-plugins/tpm "$HOME"/.tmux/plugins/tpm
 
 # Create symlinks to Home
-ln -s -f ~/dotfiles/.Brewfile ~
-ln -s -f ~/dotfiles/.gitconfig ~
-ln -s -f ~/dotfiles/.tmux.conf ~
-ln -s -f ~/dotfiles/.zshrc ~
-ln -s -f ~/dotfiles/nvim ~
-ln -s -f ~/dotfiles/.config ~
+ln -s -f "$HOME"/dotfiles/.Brewfile "$HOME"
+ln -s -f "$HOME"/dotfiles/.gitconfig "$HOME"
+ln -s -f "$HOME"/dotfiles/.tmux.conf "$HOME"
+ln -s -f "$HOME"/dotfiles/.zshrc "$HOME"
+ln -s -f "$HOME"/dotfiles/nvim "$HOME"
+ln -s -f "$HOME"/dotfiles/pretty.zsh-theme "$HOME"/.oh-my-zsh/custom/themes/
