@@ -9,6 +9,7 @@ alias bbd='brew bundle dump -f --global'
 
 # Neovim
 export XDG_CONFIG_HOME="$HOME/dotfiles"
+export PATH="$HOME/dotfiles/shell_scripts:$PATH"
 
 # ANDROID STUDIO
 export ANDROID_HOME=$HOME/Library/Android/sdk
