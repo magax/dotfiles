@@ -4,7 +4,7 @@ HOMEBREW_NO_AUTO_UPDATE=1
 
 # ALIASES
 alias vim='nvim'
-alias gmc='gitmoji -c'
+alias gmj='gitmoji -c'
 alias bbd='brew bundle dump -f --global'
 
 # Neovim
