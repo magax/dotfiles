@@ -40,3 +40,4 @@ vim.keymap.set('n', '<leader>h', ':set hls!<CR>', opts)
 vim.cmd('command! W w')
 
 require('plugins')
+require('languages')
