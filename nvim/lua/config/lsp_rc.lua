@@ -49,6 +49,11 @@ require("lspconfig")["ts_ls"].setup({
 	flags = lsp_flags,
 })
 
+require("lspconfig")["rust_analyzer"].setup({
+	on_attach = on_attach,
+	flags = lsp_flags,
+})
+
 require("lspconfig")["dartls"].setup({
 	on_attach = on_attach,
 	flags = lsp_flags,
