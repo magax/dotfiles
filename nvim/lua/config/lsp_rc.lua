@@ -37,6 +37,9 @@ local on_attach = function(client, bufnr)
 	vim.diagnostic.config({
 		virtual_text = true,
 	})
+
+  --Inlay hints
+  vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
 end
 
 local lsp_flags = {
